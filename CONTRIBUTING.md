@@ -8,7 +8,7 @@ small.
 
 ```bash
 git clone https://github.com/giovadroid/pysaj.git
-cd pysaj
+cd pysaj-elekeeper
 uv sync --extra dev
 ```
 
@@ -33,7 +33,7 @@ All four must pass. CI will enforce the same checks.
 
 ## What to contribute
 
-- New wrapped endpoints (follow the pattern in `pysaj/client.py`).
+- New wrapped endpoints (follow the pattern in `elekeeper/client.py`).
 - Bug fixes or corrections to existing wrappers.
 - Additional typed fields on response models.
 

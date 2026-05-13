@@ -59,7 +59,7 @@ class SajClient:
         """Authenticate and store the returned bearer and refresh tokens.
 
         Returns the raw login payload. Use :meth:`get_login_info` to get the
-        typed :class:`~pysaj.LoginInfo` after logging in.
+        typed :class:`~elekeeper.LoginInfo` after logging in.
         """
         payload = {
             "username": username,
@@ -135,7 +135,7 @@ class SajClient:
     async def list_plants(
         self, *, page: int = 1, page_size: int = 20
     ) -> list[PlantListEntry]:
-        """Return the account plant list as typed :class:`~pysaj.PlantListEntry` objects."""
+        """Return the account plant list as typed :class:`~elekeeper.PlantListEntry` objects."""
         data = await self.get_end_user_plant_list(page_no=page, page_size=page_size)
         return [PlantListEntry.from_dict(p) for p in (data.get("list") or [])]
 
@@ -192,7 +192,7 @@ class SajClient:
         device_sn: str | None = None,
         search_office_id_arr: str | None = None,
     ) -> PlantOverview:
-        """Return a fully populated :class:`~pysaj.PlantOverview`.
+        """Return a fully populated :class:`~elekeeper.PlantOverview`.
 
         This is the recommended entry point for dashboards and integrations.
         It calls several Elekeeper endpoints internally and aggregates the

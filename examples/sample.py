@@ -1,7 +1,7 @@
 """Command-line sample to inspect SAJ Elekeeper API values for an account.
 
 Reads credentials from a .env file in the current directory.
-Run with: python examples/sample.py [--jsonl pysaj-sample.jsonl]
+Run with: python examples/sample.py [--jsonl elekeeper-sample.jsonl]
 """
 
 from __future__ import annotations
@@ -80,7 +80,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--jsonl",
         type=Path,
-        default=Path("pysaj-sample.jsonl"),
+        default=Path("elekeeper-sample.jsonl"),
         help="Path where full endpoint payloads are written as JSONL.",
     )
     return parser.parse_args()

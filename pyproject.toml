@@ -11,7 +11,7 @@ requires-python = ">=3.11"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [
-  { name = "PySaj contributors" }
+  { name = "Giovadroid" }
 ]
 keywords = ["saj", "elekeeper", "solar", "photovoltaic", "home-assistant"]
 classifiers = [

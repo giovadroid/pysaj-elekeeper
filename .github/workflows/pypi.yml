@@ -1,0 +1,45 @@
+name: Publish to PyPI
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [CI]
+    branches: [main]
+    types: [completed]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    name: Publish to PyPI
+    # workflow_run: only if CI succeeded; workflow_dispatch: always run
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+    runs-on: ubuntu-latest
+    environment: pypi
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          # checkout the ref that CI built — latest main
+          ref: main
+
+      - uses: astral-sh/setup-uv@v8.1.0
+        with:
+          enable-cache: true
+          python-version: "3.12"
+
+      - run: uv sync --extra dev
+
+      - name: Build
+        run: uv build
+
+      - name: Check package metadata
+        run: uv run twine check dist/*
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@v1.14.0

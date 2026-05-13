@@ -14,9 +14,9 @@ def test_signed_params_matches_frontend_signature_chain(monkeypatch):
         def isoformat(self):
             return "2026-05-13"
 
-    monkeypatch.setattr("pysaj.crypto.random_token", lambda: "ABCDEFGHJKMNPQRSTWXYZabcdefhi")
-    monkeypatch.setattr("pysaj.crypto._timestamp_ms", lambda: 1778660000000)
-    monkeypatch.setattr("pysaj.crypto.date", FixedDate)
+    monkeypatch.setattr("elekeeper.crypto.random_token", lambda: "ABCDEFGHJKMNPQRSTWXYZabcdefhi")
+    monkeypatch.setattr("elekeeper.crypto._timestamp_ms", lambda: 1778660000000)
+    monkeypatch.setattr("elekeeper.crypto.date", FixedDate)
 
     signed = signed_params({"pageNo": 1, "pageSize": 10})
 

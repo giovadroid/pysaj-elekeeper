@@ -7,7 +7,7 @@ small.
 ## Getting started
 
 ```bash
-git clone https://github.com/giovadroid/pysaj.git
+git clone https://github.com/giovadroid/pysaj-elekeeper.git
 cd pysaj-elekeeper
 uv sync --extra dev
 ```

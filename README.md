@@ -4,7 +4,7 @@
 [![PyPI](https://img.shields.io/pypi/v/pysaj-elekeeper)](https://pypi.org/project/pysaj-elekeeper/)
 [![Python](https://img.shields.io/pypi/pyversions/pysaj-elekeeper)](https://pypi.org/project/pysaj-elekeeper/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![Docs](https://img.shields.io/badge/docs-giovadroid.github.io-blue)](https://giovadroid.github.io/pysaj-elekeeper-elekeeper)
+[![Docs](https://img.shields.io/badge/docs-giovadroid.github.io-blue)](https://giovadroid.github.io/pysaj-elekeeper)
 
 Async Python client for the current SAJ Elekeeper API at
 `https://eop.saj-electric.com/`.

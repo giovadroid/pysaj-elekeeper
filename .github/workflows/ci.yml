@@ -168,7 +168,7 @@ jobs:
 
       - run: uv sync --extra dev
 
-      - run: uv run pdoc -o docs/api src/pysaj
+      - run: uv run pdoc -o docs/api src/elekeeper
 
       - uses: actions/configure-pages@v6
 

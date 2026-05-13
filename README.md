@@ -1,20 +1,20 @@
-# PySaj
+# pysaj-elekeeper
 
 [![CI](https://github.com/giovadroid/pysaj-elekeeper/actions/workflows/ci.yml/badge.svg)](https://github.com/giovadroid/pysaj-elekeeper/actions/workflows/ci.yml)
 [![PyPI](https://img.shields.io/pypi/v/pysaj-elekeeper)](https://pypi.org/project/pysaj-elekeeper/)
 [![Python](https://img.shields.io/pypi/pyversions/pysaj-elekeeper)](https://pypi.org/project/pysaj-elekeeper/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![Docs](https://img.shields.io/badge/docs-giovadroid.github.io-blue)](https://giovadroid.github.io/pysaj-elekeeper)
+[![Docs](https://img.shields.io/badge/docs-giovadroid.github.io-blue)](https://giovadroid.github.io/pysaj-elekeeper-elekeeper)
 
 Async Python client for the current SAJ Elekeeper API at
 `https://eop.saj-electric.com/`.
 
-> **Looking for testers!** PySaj has been validated against SAJ inverters with
+> **Looking for testers!** pysaj-elekeeper has been validated against SAJ inverters with
 > serial prefixes **R5X** (on-grid) and **ASS** (AC-coupling with battery).
 > If you have a different SAJ device and are willing to test, please open an
 > issue — your feedback helps expand coverage.
 
-PySaj targets the newer Elekeeper web API (`/dev-api/api/v1/...`) used by the
+pysaj-elekeeper targets the newer Elekeeper web API (`/dev-api/api/v1/...`) used by the
 current SAJ portal. It does not use the legacy `/saj/login` cookie flow.
 
 ## Status
@@ -46,8 +46,8 @@ python -m pip install pysaj-elekeeper
 From a local checkout:
 
 ```bash
-git clone https://github.com/giovadroid/pysaj.git
-cd pysaj
+git clone https://github.com/giovadroid/pysaj-elekeeper.git
+cd pysaj-elekeeper
 uv sync --extra dev
 ```
 
@@ -83,7 +83,7 @@ High-level API for normal integrations:
 import asyncio
 import os
 
-from pysaj import SajClient
+from elekeeper import SajClient
 
 
 async def main() -> None:
@@ -109,7 +109,7 @@ payloads:
 import asyncio
 import os
 
-from pysaj import SajClient
+from elekeeper import SajClient
 
 
 async def main() -> None:
@@ -233,7 +233,7 @@ Escape hatches:
 ## API Documentation
 
 Generated from docstrings with [pdoc](https://pdoc.dev). Hosted at
-<https://giovadroid.github.io/pysaj>.
+<https://giovadroid.github.io/pysaj-elekeeper>.
 
 To generate locally:
 
@@ -245,7 +245,7 @@ make docs-serve  # live preview at http://localhost:8080
 Or directly:
 
 ```bash
-uv run pdoc -o docs/api src/pysaj
+uv run pdoc -o docs/api src/elekeeper
 ```
 
 ## Development

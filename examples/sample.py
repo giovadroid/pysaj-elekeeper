@@ -16,7 +16,7 @@ from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 from typing import Any, Self
 
-from pysaj import SajApiError, SajClient
+from elekeeper import SajApiError, SajClient
 
 
 def load_env(path: Path | None = None) -> None:

@@ -46,8 +46,8 @@ dev = [
 
 [tool.hatch.build]
 include = [
-  "src/pysaj/**/*.py",
-  "src/pysaj/py.typed",
+  "src/elekeeper/**/*.py",
+  "src/elekeeper/py.typed",
   "README.md",
   "LICENSE",
   "CHANGELOG.md",
@@ -68,7 +68,7 @@ exclude = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/pysaj"]
+packages = ["src/elekeeper"]
 
 [tool.ruff]
 line-length = 100

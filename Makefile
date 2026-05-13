@@ -1,10 +1,10 @@
 .PHONY: docs docs-serve lint test build bump-patch bump-minor bump-major
 
 docs:
-	uv run pdoc -o docs/api src/pysaj
+	uv run pdoc -o docs/api src/elekeeper
 
 docs-serve:
-	uv run pdoc src/pysaj
+	uv run pdoc src/elekeeper
 
 lint:
 	uv run ruff check .

@@ -1,8 +1,14 @@
 # Changelog
 
-## 0.0.5 - Unreleased
+## 0.0.7 - Unreleased
 
-## 0.0.4 - 2026-05-13
+- Renamed Python module from `pysaj` to `elekeeper` to avoid conflict with the
+  built-in SAJ local Wi-Fi integration in Home Assistant. Install with
+  `pip install pysaj-elekeeper`, import with `from elekeeper import ...`.
+
+## 0.0.6 - 2026-05-13
+
+- Bump version; no functional changes from 0.0.5.
 
 - Initial public release.
 - Async `SajClient` with Elekeeper-compatible AES password encryption and request signing.

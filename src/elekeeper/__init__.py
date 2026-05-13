@@ -4,9 +4,9 @@ from importlib.metadata import version as _version
 
 __version__ = _version("pysaj-elekeeper")
 
-from pysaj.client import SajClient
-from pysaj.exceptions import SajApiError, SajAuthError, SajError
-from pysaj.models import (
+from elekeeper.client import SajClient
+from elekeeper.exceptions import SajApiError, SajAuthError, SajError
+from elekeeper.models import (
     BatteryInfo,
     DeviceInfo,
     DeviceOverview,

@@ -1,6 +1,6 @@
 import pytest
 
-from pysaj import SajAuthError, SajClient
+from elekeeper import SajAuthError, SajClient
 
 
 @pytest.mark.asyncio

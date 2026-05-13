@@ -1,4 +1,4 @@
-from pysaj.crypto import encrypt_password, signed_params
+from elekeeper.crypto import encrypt_password, signed_params
 
 
 def test_encrypt_password_matches_frontend_algorithm():

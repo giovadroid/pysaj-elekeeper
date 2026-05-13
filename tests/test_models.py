@@ -1,6 +1,6 @@
 import pytest
 
-from pysaj import (
+from elekeeper import (
     BatteryInfo,
     DeviceInfo,
     DeviceOverview,

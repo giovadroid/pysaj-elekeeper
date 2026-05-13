@@ -7,9 +7,9 @@ from typing import Any
 
 import httpx
 
-from pysaj.crypto import encrypt_password, signed_params
-from pysaj.exceptions import SajApiError, SajAuthError
-from pysaj.models import (
+from elekeeper.crypto import encrypt_password, signed_params
+from elekeeper.exceptions import SajApiError, SajAuthError
+from elekeeper.models import (
     BatteryInfo,
     DeviceInfo,
     DeviceOverview,

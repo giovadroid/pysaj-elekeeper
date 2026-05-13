@@ -12,7 +12,7 @@ import os
 from pathlib import Path
 from typing import Any
 
-from pysaj import PlantOverview, SajClient
+from elekeeper import PlantOverview, SajClient
 
 
 def load_env(path: Path | None = None) -> None:

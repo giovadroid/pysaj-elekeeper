@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pysaj-elekeeper"
-version = "0.0.6"
+version = "0.0.7"
 description = "Python client for the SAJ Elekeeper API"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -46,8 +46,8 @@ dev = [
 
 [tool.hatch.build]
 include = [
-  "src/pysaj/**/*.py",
-  "src/pysaj/py.typed",
+  "src/elekeeper/**/*.py",
+  "src/elekeeper/py.typed",
   "README.md",
   "LICENSE",
   "CHANGELOG.md",
@@ -68,7 +68,7 @@ exclude = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/pysaj"]
+packages = ["src/elekeeper"]
 
 [tool.ruff]
 line-length = 100
@@ -82,7 +82,7 @@ asyncio_mode = "auto"
 testpaths = ["tests"]
 
 [tool.bumpversion]
-current_version = "0.0.6"
+current_version = "0.0.7"
 parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
 serialize = ["{major}.{minor}.{patch}"]
 search = "{current_version}"

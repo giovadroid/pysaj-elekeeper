@@ -128,7 +128,6 @@ jobs:
     needs: [bump, build]
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
-    environment: github-releases
 
     steps:
       - uses: actions/download-artifact@v8.0.1
@@ -156,9 +155,6 @@ jobs:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     continue-on-error: true  # remove once GitHub Pages is enabled
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - uses: actions/checkout@v6

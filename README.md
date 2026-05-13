@@ -145,7 +145,7 @@ cp .env.example .env
 
 ```bash
 python examples/sample.py
-python examples/sample.py --jsonl pysaj-sample.jsonl
+python examples/sample.py --jsonl elekeeper-sample.jsonl
 ```
 
 Logs in, lists plants, fetches the first plant's detail, device, battery, weather, and chart

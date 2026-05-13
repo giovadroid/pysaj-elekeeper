@@ -390,7 +390,7 @@ class DeviceOverview:
 class PlantOverview:
     """Relevant plant values collected from multiple Elekeeper endpoints.
 
-    Returned by :meth:`~pysaj.SajClient.get_plant_overview`, which is the
+    Returned by :meth:`~elekeeper.SajClient.get_plant_overview`, which is the
     recommended entry point for dashboards and Home Assistant integrations.
     """
 

@@ -14,12 +14,11 @@ permissions:
 jobs:
   publish:
     name: Publish to PyPI
-    # workflow_run: only if CI succeeded; workflow_dispatch: always run
     if: >
       github.event_name == 'workflow_dispatch' ||
       (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
-    environment: pypi
+    environment: pypi  # needs Trusted Publisher configured on PyPI, no reviewers = fully automatic
 
     steps:
       - uses: actions/checkout@v6

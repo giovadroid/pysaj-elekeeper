@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   # -------------------------------------------------------------------------
-  # 1. Test — runs on push and PRs
+  # 1. Test
   # -------------------------------------------------------------------------
   test:
     name: Python ${{ matrix.python-version }}
@@ -45,7 +45,7 @@ jobs:
         run: uv run python -m pytest -q
 
   # -------------------------------------------------------------------------
-  # 2. Bump — only on push to main, after tests pass
+  # 2. Bump
   # -------------------------------------------------------------------------
   bump:
     name: Bump version
@@ -85,7 +85,7 @@ jobs:
           git push origin --tags
 
   # -------------------------------------------------------------------------
-  # 3. Build — after bump, produces versioned artifacts
+  # 3. Build
   # -------------------------------------------------------------------------
   build:
     name: Build
@@ -116,14 +116,13 @@ jobs:
           path: dist/*
 
   # -------------------------------------------------------------------------
-  # 4. Release — GitHub release with artifacts
+  # 4a. Release — parallel after build
   # -------------------------------------------------------------------------
   release:
     name: Release
     needs: [bump, build]
     runs-on: ubuntu-latest
-    environment:
-      name: github-releases
+    environment: github-releases
 
     steps:
       - uses: actions/download-artifact@v8.0.1
@@ -143,13 +142,13 @@ jobs:
             --generate-notes
 
   # -------------------------------------------------------------------------
-  # 5. Docs — deploy to GitHub Pages after release
+  # 4b. Docs — parallel after build
   # -------------------------------------------------------------------------
   docs:
     name: Docs
-    needs: release
+    needs: [bump, build]
     runs-on: ubuntu-latest
-    continue-on-error: true  # Pages not enabled on private repos; remove when public
+    continue-on-error: true  # remove once GitHub Pages is enabled
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -176,3 +175,25 @@ jobs:
 
       - uses: actions/deploy-pages@v5
         id: deployment
+
+  # -------------------------------------------------------------------------
+  # 4c. PyPI — parallel after build, waits for manual approval
+  #     Configure environment "pypi" with a required reviewer in GitHub to
+  #     gate the publish step.
+  # -------------------------------------------------------------------------
+  pypi:
+    name: Publish to PyPI
+    needs: [bump, build]
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+
+    steps:
+      - uses: actions/download-artifact@v8.0.1
+        with:
+          name: python-distributions
+          path: dist/
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@v1.14.0

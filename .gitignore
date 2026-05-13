@@ -1,0 +1,17 @@
+.venv/
+.env
+.env.*
+!.env.example
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+*.jsonl
+.ai/
+build/
+dist/
+docs/api/
+*.pyc
+
+# bump-my-version working files
+.bumpversion.toml
